@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .utils import json_to_dict_list
+from utils import json_to_dict_list
 import os
 from typing import Optional
 
@@ -9,10 +9,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(script_dir)
 
 # Получаем путь к JSON
-path_to_json = os.path.join(parent_dir, 'heroes.json')
-
-
-
+path_to_json = os.path.dirname(os.path.abspath('heroes.json'))
 app = FastAPI()
 
 @app.get("/heroes")
